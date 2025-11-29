@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<title>{% block title%} {{ title }} {% endblock %}</title>
+
+{% block content %}
+<h1>Контакты:</h1>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Контакты:
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">email: kinotest@kino.ru</li>
+    <li class="list-group-item">phone: +7-123-45-67</li>
+    <li class="list-group-item">web: online_films.ru</li>
+  </ul>
+</div>
+{% endblock %}

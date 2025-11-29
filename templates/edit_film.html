@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Редактировать {{ film.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1> Редактировать {{ film.name }}</h1>
+    <form action="/films/edit/{{ film_id }}/" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Название</label>
+            <input type="text" name="name" value="{{ film.name }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Год</label>
+            <input type="number" name="year" value="{{ film.year }}" class="form-control" min="1900" max="2025" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Описание</label>
+            <textarea name="description" class="form-control" rows="3" required>{{ film.description }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">Сохранить</button>
+        <a href="/manage/" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

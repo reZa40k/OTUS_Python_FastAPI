@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<title>{% block title%} {{ title }} {% endblock %}</title>
+
+{% block content %}
+<h1>Список фильмов</h1>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Год</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for film in films %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ film.name }}</td>
+                <td>{{ film.year }}</td>
+                <td>{{ film.description}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<title>{% block title%} Добавление фильма {% endblock %}</title>
+
+{% block content %}
+<div class="container mt-5">
+    <h1> Добавить фильм</h1>
+    <form action="/films/add_film/" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Название</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Год</label>
+            <input type="number" name="year" class="form-control" min="1900" max="2025" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Описание</label>
+            <textarea name="description" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <a href="/films/" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}
+
+
